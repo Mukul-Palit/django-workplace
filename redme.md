@@ -1,0 +1,1 @@
+## Django web application for fetching the group details from facebook workplace

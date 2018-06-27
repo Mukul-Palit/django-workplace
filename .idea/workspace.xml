@@ -32,11 +32,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="redme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/redme.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="80" selection-start-column="80" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -85,15 +94,6 @@
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="group.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fetch/templates/fetch/group.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -160,6 +160,7 @@
         <option value="$PROJECT_DIR$/fetch/templates/fetch/members.html" />
         <option value="$PROJECT_DIR$/workplace/wsgi.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/redme.md" />
       </list>
     </option>
   </component>
@@ -266,13 +267,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fetch/templates/fetch/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fetch/templates/fetch/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -632,7 +626,14 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="80" selection-start-column="80" selection-end-column="80" />
         </state>
       </provider>
     </entry>
