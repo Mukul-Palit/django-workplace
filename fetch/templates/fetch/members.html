@@ -1,0 +1,803 @@
+{% extends 'fetch/layout.html' %}
+
+{% block main_content %}
+
+<div class="card">
+    <div class="card-body">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-12">
+
+                <div class="input-group md-form form-sm form-2 pl-0 mb-0">
+                    <input class="form-control mr-sm-2 grey-border" id="myInput" onkeyup="myNewFunction()" type="text" placeholder="Search by Group Name" aria-label="Search">
+                    <div class="input-group-append">
+                        <span class="input-group-text waves-effect grey lighten-3" id="basic-addon1">
+                            <a><i class="fa fa-search text-grey" aria-hidden="true"></i></a>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+        <!--Table-->
+        <table id="myTable" class="table table-striped">
+
+            <!--Table head-->
+            <thead>
+                <tr class="table-success">
+                    <th><b>S.No.</b></th>
+                    <th><b>Member Name</b></th>
+                    <th><b>Member ID</b></th>
+                    <th><b>Email ID</b></th>
+                    <th><b>Administrator</b></th>
+                    <th><b>Group</b></th>
+                </tr>
+            </thead>
+            <!--Table head-->
+
+            <!--Table body-->
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Prashant Kuvlekar</td>
+                    <td>100018494046800</td>
+                    <td>prashant.kuvlekar@lntebg.com</td>
+                    <td>False</td>
+                    <td>F&A Challenge - Supplier Financial Risk Monitoring</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Ashish Malik</td>
+                    <td>100017481300436</td>
+                    <td>ashish.malik@lntebg.com</td>
+                    <td>False</td>
+                    <td>F&A Challenge - Supplier Financial Risk Monitoring</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Darshan Shah</td>
+                    <td>100018520264830</td>
+                    <td>darshan.shah@lntebg.com</td>
+                    <td>True</td>
+                    <td>F&A Challenge - Supplier Financial Risk Monitoring</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Girish Panchal</td>
+                    <td>100018363556905</td>
+                    <td>girish.panchal@lntebg.com</td>
+                    <td>False</td>
+                    <td>ESE boughtout</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>SANGITA SINGH</td>
+                    <td>100018525544749</td>
+                    <td>sangita.singh@lntebg.com</td>
+                    <td>False</td>
+                    <td>ESE boughtout</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>ARPIT B PADARIYA</td>
+                    <td>100018573691586</td>
+                    <td>arpit.padariya@lntebg.com</td>
+                    <td>False</td>
+                    <td>My Day My Way: SDDC VSW</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>KEVIN R PATEL</td>
+                    <td>100018380596401</td>
+                    <td>kevin.patel@lntebg.com</td>
+                    <td>True</td>
+                    <td>My Day My Way: SDDC VSW</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>ANUPAMA MALVIYA</td>
+                    <td>100017435103490</td>
+                    <td>anupama.malviya@lntebg.com</td>
+                    <td>True</td>
+                    <td>IT-Test Group</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>Arshi Ansari</td>
+                    <td>100018053657819</td>
+                    <td>arshi.ansari@lntebg.com</td>
+                    <td>False</td>
+                    <td>IT-Test Group</td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td>Imran UL Haque Qureshi</td>
+                    <td>100017227872393</td>
+                    <td>imran.qureshi@lntebg.com</td>
+                    <td>False</td>
+                    <td>IT-Test Group</td>
+                </tr>
+                <tr>
+                    <th scope="row">11</th>
+                    <td>Sayali Mhatre</td>
+                    <td>100018400274601</td>
+                    <td>sayali.mhatre@lntebg.com</td>
+                    <td>False</td>
+                    <td>Sayali + Ashish</td>
+                </tr>
+                <tr>
+                    <th scope="row">12</th>
+                    <td>Ashish Malik</td>
+                    <td>100017481300436</td>
+                    <td>ashish.malik@lntebg.com</td>
+                    <td>True</td>
+                    <td>Sayali + Ashish</td>
+                </tr>
+                <tr>
+                    <th scope="row">13</th>
+                    <td>RAYOMAND MEDHORA</td>
+                    <td>100018578131296</td>
+                    <td>rayomand.medhora@lntebg.com</td>
+                    <td>True</td>
+                    <td>Business Development - Western Zone</td>
+                </tr>
+                <tr>
+                    <th scope="row">14</th>
+                    <td>Rajesh Tawde</td>
+                    <td>100018453279945</td>
+                    <td>rajesh.tawde@lntebg.com</td>
+                    <td>False</td>
+                    <td>Rabale Marine</td>
+                </tr>
+                <tr>
+                    <th scope="row">15</th>
+                    <td>Sandeep Parekar</td>
+                    <td>100018563388638</td>
+                    <td>sandeep.parekar-ocp@lntebg.com</td>
+                    <td>True</td>
+                    <td>Rabale Marine</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">16</th>
+                    <td>GHANSHAM BORSE</td>
+                    <td>100018575070792</td>
+                    <td>ghanasham.borse@lntebg.com</td>
+                    <td>False</td>
+                    <td>Rabale Marine</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">17</th>
+                    <td>Uday Mahajan</td>
+                    <td>100018419803577</td>
+                    <td>uday.mahajan@lntebg.com</td>
+                    <td>False</td>
+                    <td>Rabale Marine</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">18</th>
+                    <td>Anand Sahasrabudhe</td>
+                    <td>100018364817349</td>
+                    <td>anand.sahasrabudhe@lntebg.com</td>
+                    <td>False</td>
+                    <td>Rabale Marine</td>
+                </tr>
+                <tr>
+                    <th scope="row">19</th>
+                    <td>ANUPAMA MALVIYA</td>
+                    <td>100017435103490</td>
+                    <td>anupama.malviya@lntebg.com</td>
+                    <td>True</td>
+                    <td>Testing Group by ABML</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">20</th>
+                    <td>Arshi Ansari</td>
+                    <td>100018053657819</td>
+                    <td>arshi.ansari@lntebg.com</td>
+                    <td>False</td>
+                    <td>Testing Group by ABML</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">21</th>
+                    <td>Arvind Rao</td>
+                    <td>100015428475755</td>
+                    <td>arvind.rao@lntebg.com</td>
+                    <td>False</td>
+                    <td>Powai-TCII-Improvements</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">22</th>
+                    <td>Arshi Ansari</td>
+                    <td>100018053657819</td>
+                    <td>arshi.ansari@lntebg.com</td>
+                    <td>False</td>
+                    <td>Powai-TCII-Improvements</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">23</th>
+                    <td>ANUPAMA MALVIYA</td>
+                    <td>100017435103490</td>
+                    <td>anupama.malviya@lntebg.com</td>
+                    <td>False</td>
+                    <td>Powai-TCII-Improvements</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">24</th>
+                    <td>Imran UL Haque Qureshi</td>
+                    <td>100017227872393</td>
+                    <td>imran.qureshi@lntebg.com</td>
+                    <td>False</td>
+                    <td>Powai-TCII-Improvements</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">25</th>
+                    <td>EA Newsman</td>
+                    <td>100022840248856</td>
+                    <td>ea-newsman@lntebg.com</td>
+                    <td>True</td>
+                    <td>Powai-TCII-Improvements</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">26</th>
+                    <td>Dinesh Vachhani</td>
+                    <td>100018414313982</td>
+                    <td>dinesh.vachhani@lntebg.com</td>
+                    <td>True</td>
+                    <td>Safety @ Mahape</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">27</th>
+                    <td>Anand Kurien</td>
+                    <td>100018742302628</td>
+                    <td>anand.kurien-ocp@lntebg.com</td>
+                    <td>True</td>
+                    <td>Safety @ Mahape</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">28</th>
+                    <td>Sameer Waghmare</td>
+                    <td>100018522155040</td>
+                    <td>sameer.waghmare@lntebg.com</td>
+                    <td>False</td>
+                    <td>Safety @ Mahape</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">29</th>
+                    <td>Rajesh Patil</td>
+                    <td>100018410833710</td>
+                    <td>rajesh.patil@lntebg.com</td>
+                    <td>False</td>
+                    <td>Safety @ Mahape</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">30</th>
+                    <td>Dinesh Vachhani</td>
+                    <td>100018414313982</td>
+                    <td>dinesh.vachhani@lntebg.com</td>
+                    <td>True</td>
+                    <td>Safety @ Rabale</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">31</th>
+                    <td>Anand Kurien</td>
+                    <td>100018742302628</td>
+                    <td>anand.kurien-ocp@lntebg.com</td>
+                    <td>False</td>
+                    <td>Safety @ Rabale</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">32</th>
+                    <td>Nardev Singh Rana</td>
+                    <td>100024154271454</td>
+                    <td>nardevsingh.rana@lntebg.com</td>
+                    <td>True</td>
+                    <td>Safety @ MPS Mysore</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">33</th>
+                    <td>Dinesh Vachhani</td>
+                    <td>100018414313982</td>
+                    <td>dinesh.vachhani@lntebg.com</td>
+                    <td>True</td>
+                    <td>Safety @ MPS Mysore</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">34</th>
+                    <td>Anand Kurien</td>
+                    <td>100018742302628</td>
+                    <td>anand.kurien-ocp@lntebg.com</td>
+                    <td>False</td>
+                    <td>Safety @ MPS Mysore</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">35</th>
+                    <td>SHIVAKUMARA K</td>
+                    <td>100018482677701</td>
+                    <td>shivakumara.k@lntebg.com</td>
+                    <td>False</td>
+                    <td>Safety @ MPS Mysore</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">36</th>
+                    <td>Dinesh Vachhani</td>
+                    <td>100018414313982</td>
+                    <td>dinesh.vachhani@lntebg.com</td>
+                    <td>True</td>
+                    <td>Safety @ ESE Coimbatore</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">37</th>
+                    <td>Anand Kurien</td>
+                    <td>100018742302628</td>
+                    <td>anand.kurien-ocp@lntebg.com</td>
+                    <td>False</td>
+                    <td>Safety @ ESE Coimbatore</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">38</th>
+                    <td>ANUPAMA MALVIYA</td>
+                    <td>100017435103490</td>
+                    <td>anupama.malviya@lntebg.com</td>
+                    <td>True</td>
+                    <td>Poll test group</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">39</th>
+                    <td>Surendra Sharma</td>
+                    <td>100018546303605</td>
+                    <td>surendra.sharma@lntebg.com</td>
+                    <td>False</td>
+                    <td>Poll test group</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">40</th>
+                    <td>Jayshri Jadhav</td>
+                    <td>100018378916871</td>
+                    <td>jayshri.jadhav@lntebg.com</td>
+                    <td>False</td>
+                    <td>Poll test group</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">41</th>
+                    <td>Harshad Odhekar</td>
+                    <td>100018462549530</td>
+                    <td>harshad.odhekar@lntebg.com</td>
+                    <td>False</td>
+                    <td>Poll test group</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">42</th>
+                    <td>Pearl .</td>
+                    <td>100018420883969</td>
+                    <td>pearl.garg@lntebg.com</td>
+                    <td>True</td>
+                    <td>Poll test group</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">43</th>
+                    <td>Arvind Rao</td>
+                    <td>100015428475755</td>
+                    <td>arvind.rao@lntebg.com</td>
+                    <td>False</td>
+                    <td>SharePoint 2016</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">44</th>
+                    <td>ANUPAMA MALVIYA</td>
+                    <td>100017435103490</td>
+                    <td>anupama.malviya@lntebg.com</td>
+                    <td>True</td>
+                    <td>SharePoint 2016</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">45</th>
+                    <td>YASHWANT KULKARNI</td>
+                    <td>100018553022712</td>
+                    <td>yashwant.kulkarni@lntebg.com</td>
+                    <td>False</td>
+                    <td>Yashwant+Ashish</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">46</th>
+                    <td>Ashish Malik</td>
+                    <td>100017481300436</td>
+                    <td>ashish.malik@lntebg.com</td>
+                    <td>True</td>
+                    <td>Yashwant+Ashish</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">47</th>
+                    <td>Sayali Mhatre</td>
+                    <td>100018400274601</td>
+                    <td>sayali.mhatre@lntebg.com</td>
+                    <td>False</td>
+                    <td>My Day My Way</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">48</th>
+                    <td>Rohit Italiya</td>
+                    <td>100018380266860</td>
+                    <td>rohitkumar.italiya@lntebg.com</td>
+                    <td>False</td>
+                    <td>My Day My Way</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">49</th>
+                    <td>Joydeep Banerjee</td>
+                    <td>100018550412691</td>
+                    <td>joydeep.banerjee@lntebg.com</td>
+                    <td>False</td>
+                    <td>My Day My Way</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">50</th>
+                    <td>Usufe Shaikh</td>
+                    <td>100018506345671</td>
+                    <td>usufe.shaikh@lntebg.com</td>
+                    <td>False</td>
+                    <td>My Day My Way</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">51</th>
+                    <td>KEVIN R PATEL</td>
+                    <td>100018380596401</td>
+                    <td>kevin.patel@lntebg.com</td>
+                    <td>False</td>
+                    <td>My Day My Way</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">52</th>
+                    <td>M Jayakumar</td>
+                    <td>100018567361825</td>
+                    <td>jayakumar.m@lntebg.com</td>
+                    <td>False</td>
+                    <td>My Day My Way</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">53</th>
+                    <td>Samir Kamat</td>
+                    <td>100018484837472</td>
+                    <td>samir.kamat@lntebg.com</td>
+                    <td>False</td>
+                    <td>My Day My Way</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">54</th>
+                    <td>Paresh Patil</td>
+                    <td>100018382936151</td>
+                    <td>paresh.patil@lntebg.com</td>
+                    <td>False</td>
+                    <td>Improvement-LCM-VSW</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">55</th>
+                    <td>Savan Nareshbhai Patel</td>
+                    <td>100018416114116</td>
+                    <td>savan.patel@lntebg.com</td>
+                    <td>False</td>
+                    <td>Improvement-LCM-VSW</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">56</th>
+                    <td>MUKUL PUNN</td>
+                    <td>100018349639164</td>
+                    <td>mukul.punn@lntebg.com</td>
+                    <td>True</td>
+                    <td>Improvement-LCM-VSW</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">57</th>
+                    <td>Lakshmana Poojary</td>
+                    <td>100018546063523</td>
+                    <td>lakshmana.poojary@lntebg.com</td>
+                    <td>False</td>
+                    <td>Improvement-LCM-VSW</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">58</th>
+                    <td>RAHUL JAIN</td>
+                    <td>100018515675503</td>
+                    <td>rahul.jain@lntebg.com</td>
+                    <td>False</td>
+                    <td>Improvement-LCM-VSW</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">59</th>
+                    <td>Susheel Choubal</td>
+                    <td>100018348078536</td>
+                    <td>susheel.choubal@lntebg.com</td>
+                    <td>False</td>
+                    <td>Improvement-LCM-VSW</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">60</th>
+                    <td>ANUPAMA MALVIYA</td>
+                    <td>100017435103490</td>
+                    <td>anupama.malviya@lntebg.com</td>
+                    <td>True</td>
+                    <td>Polls</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">61</th>
+                    <td>Arshi Ansari</td>
+                    <td>100018053657819</td>
+                    <td>arshi.ansari@lntebg.com</td>
+                    <td>False</td>
+                    <td>Polls</td>
+                </tr>
+                <tr>
+                    <th scope="row">62</th>
+                    <td>Imran UL Haque Qureshi</td>
+                    <td>100017227872393</td>
+                    <td>imran.qureshi@lntebg.com</td>
+                    <td>False</td>
+                    <td>Polls</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">63</th>
+                    <td>ABHIMANYU PANT</td>
+                    <td>100017329514286</td>
+                    <td>abhimanyu.pant@lntebg.com</td>
+                    <td>False</td>
+                    <td>FLLP B4</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">64</th>
+                    <td>ROHIT GOEL</td>
+                    <td>100018352668179</td>
+                    <td>rohit.goel@lntebg.com</td>
+                    <td>False</td>
+                    <td>FLLP B4</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">65</th>
+                    <td>Gauri Rajwade</td>
+                    <td>100018476588165</td>
+                    <td>gauri.rajwade@lntebg.com</td>
+                    <td>True</td>
+                    <td>FLLP B4</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">66</th>
+                    <td>Sneha Gaikar</td>
+                    <td>100024171120113</td>
+                    <td>sneha.gaikar@lntebg.com</td>
+                    <td>False</td>
+                    <td>FLLP B4</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">67</th>
+                    <td>MAHESH TETAMBE</td>
+                    <td>100018442599664</td>
+                    <td>mahesh.tetambe@lntebg.com</td>
+                    <td>False</td>
+                    <td>FLLP B4</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">68</th>
+                    <td>Paresh Patil</td>
+                    <td>100018382936151</td>
+                    <td>paresh.patil@lntebg.com</td>
+                    <td>False</td>
+                    <td>VSW - LCM</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">69</th>
+                    <td>Susheel Choubal</td>
+                    <td>100018348078536</td>
+                    <td>susheel.choubal@lntebg.com</td>
+                    <td>False</td>
+                    <td>VSW - LCM</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">70</th>
+                    <td>Savan Nareshbhai Patel</td>
+                    <td>100018416114116</td>
+                    <td>savan.patel@lntebg.com</td>
+                    <td>True</td>
+                    <td>VSW - LCM</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">71</th>
+                    <td>Lakshmana Poojary</td>
+                    <td>100018546063523</td>
+                    <td>lakshmana.poojary@lntebg.com</td>
+                    <td>False</td>
+                    <td>VSW - LCM</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">72</th>
+                    <td>RAHUL JAIN</td>
+                    <td>100018515675503</td>
+                    <td>rahul.jain@lntebg.com</td>
+                    <td>False</td>
+                    <td>VSW - LCM</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">73</th>
+                    <td>MUKUL PUNN</td>
+                    <td>100018349639164</td>
+                    <td>mukul.punn@lntebg.com</td>
+                    <td>False</td>
+                    <td>VSW - LCM</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">74</th>
+                    <td>G Sivakumar</td>
+                    <td>100018561782422</td>
+                    <td>g.sivakumar@lntebg.com</td>
+                    <td>False</td>
+                    <td>L&T E&A announcements</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">75</th>
+                    <td>Santosh Mulgund</td>
+                    <td>100018405013798</td>
+                    <td>santosh.mulgund@lntebg.com</td>
+                    <td>False</td>
+                    <td>L&T E&A announcements</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">76</th>
+                    <td>Rohit Italiya</td>
+                    <td>100018380266860</td>
+                    <td>rohitkumar.italiya@lntebg.com</td>
+                    <td>False</td>
+                    <td>L&T E&A in the News</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">77</th>
+                    <td>Amit Raotole</td>
+                    <td>100018429102166</td>
+                    <td>amit.raotole@lntebg.com</td>
+                    <td>False</td>
+                    <td>L&T E&A in the News</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">78</th>
+                    <td>Dhananjay Kulkarni</td>
+                    <td>100018421633147</td>
+                    <td>dhananjay.kulkarni@lntebg.com</td>
+                    <td>False</td>
+                    <td>L&T E&A in the News</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">79</th>
+                    <td>Grishma Harshad Dand</td>
+                    <td>100018442210967</td>
+                    <td>grishma.dand@lntebg.com</td>
+                    <td>False</td>
+                    <td>L&T E&A in the News</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">80</th>
+                    <td>T Suresh</td>
+                    <td>100018410804490</td>
+                    <td>suresh.tk@lntebg.com</td>
+                    <td>False</td>
+                    <td>L&T E&A in the News</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">81</th>
+                    <td>Arvind Rao</td>
+                    <td>100015428475755</td>
+                    <td>arvind.rao@lntebg.com</td>
+                    <td>True</td>
+                    <td>Industry News</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">82</th>
+                    <td>Prashant Ahirwar</td>
+                    <td>100018480426748</td>
+                    <td>prashant.ahirwar@lntebg.com</td>
+                    <td>False</td>
+                    <td>Emerald Frame 0</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">83</th>
+                    <td>SUBRAT KUMAR BEHERA</td>
+                    <td>100018458708399</td>
+                    <td>subrat.behera@lntebg.com</td>
+                    <td>False</td>
+                    <td>Emerald Frame 0</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">84</th>
+                    <td>Amitkumar Bane</td>
+                    <td>100018583230257</td>
+                    <td>amit.bane@lntebg.com</td>
+                    <td>False</td>
+                    <td>Emerald Frame 0</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">85</th>
+                    <td>ANUPAMA MALVIYA</td>
+                    <td>100017435103490</td>
+                    <td>anupama.malviya@lntebg.com</td>
+                    <td>True</td>
+                    <td>Emerald Frame 0</td>
+                </tr>
+
+            </tbody>
+            <!--Table body-->
+        </table>
+        <!--Table-->
+
+    </div>
+</div>
+{% endblock %}
