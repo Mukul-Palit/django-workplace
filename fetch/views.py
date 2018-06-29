@@ -104,20 +104,20 @@ def group(request):
 
 
 def members(request):
-    TOKEN = "DQVJ1VWNVU0I3YndtdmRZAb2RfX2JHQmJfOVpzc0xWNWlCa05RUXI4cV9oSWVXVXVMd2VSb24zc2JsQkZArbWlyVWc0dExCdnQ3QTM2ekJQTGlzaEJCdldJbUlYLVg4d1RycFZA5OWViRVhSQzVhN2d1SS04OEdqM3RlSG9zUjhpdlMtR2duWHZAMZADFieUN2bE9IcnpOZA2xnQmJ6ejh6d3ZAqemFqcXNkQWpaU3hISVY3TnQ0d21IUi1hbGZAWaHE4b0k0MFZA3RUo0UVdTM2ZAxcHVOWAZDZD"
-    DAYS = 500
+    TOKEN = "DQVJ0LW9vc1BRYlJ1TU5heEtyVEVLbnE1ZAHdLQnZAfUFJjblhRQUdZANDhHYnZAwdU53RVI0UndFZAlJMV2ttczlRai1yZAGZAVQUNmTHQ4YXVjT3pGREtIWi1JdEZAibUlxWFBCc3FQSFBfd2dlS0RTVE81SHBSX2lobnc2UEFNcXJJZA2laRHpCaGRCZAlBkWXhvNW1LT1FMTHFHZAFFmdzR3T19WY2kyTGdoeFY3Sy1ZAOE1jb1hkT2x5cktwQjlGcGl2YlRxX0dQSWY0dmN2U1B2b0NoQQZDZD"
+    DAYS = 1000
 
     GRAPH_URL_PREFIX = "https://graph.facebook.com/"
     GROUPS_SUFFIX = "/groups"
     MEMBERS_SUFFIX = "/members"
 
-    DEFAULT_LIMIT = "50000"
+    DEFAULT_LIMIT = "500"
     VERBOSE = True
-    SINCE = datetime.datetime.now() - datetime.timedelta(days=DAYS)
+    SINCE = datetime.now() - timedelta(days=DAYS)
 
     headers = {'Authorization': 'Bearer ' + TOKEN}
     params = "?fields=feed.since(" + SINCE.strftime(
-        "%S") + ").limit(50000),name,privacy,members{name,id,email,administrator},updated_time&amp"
+        "%S") + ").limit(500),name,privacy,members{name,id,email,administrator},updated_time&amp"
 
     # params += "&amp;limit=" + DEFAULT_LIMIT
 
@@ -127,12 +127,13 @@ def members(request):
     result_json = json.loads(result.text)
     groups = []
     members = []
+    name = []
 
     def mem(grp):
         print("***group_members***")
 
         paramss = "?fields=feed.since(" + SINCE.strftime(
-            "1000") + ").limit(50000),name,email,id,administrator,updated_time&amp"
+            "%S") + ").limit(500),name,email,id,administrator,updated_time&amp"
         # paramss += "&amp;limit=" + DEFAULT_LIMIT
 
         # print("1")
@@ -151,20 +152,14 @@ def members(request):
                     members.append(member_obj)
                     # print("8")
                     for i in range(len(members)):
-                        # print("9")
                         print(members[i]['name'])
-                        # print("10")
                         print(members[i]['email'])
                         print(members[i]['administrator'])
                         print(members[i]['id'])
                         print("******")
                         # print("11")
                     members.clear()
-        else:
-            print("12")
-
     print("groups")
-
     if "data" in result_json:
         for group_obj in result_json["data"]:
             if "feed" in group_obj:
