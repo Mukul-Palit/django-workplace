@@ -104,7 +104,81 @@ def group(request):
 
 
 def members(request):
-        return render(
+    TOKEN = "DQVJ1VWNVU0I3YndtdmRZAb2RfX2JHQmJfOVpzc0xWNWlCa05RUXI4cV9oSWVXVXVMd2VSb24zc2JsQkZArbWlyVWc0dExCdnQ3QTM2ekJQTGlzaEJCdldJbUlYLVg4d1RycFZA5OWViRVhSQzVhN2d1SS04OEdqM3RlSG9zUjhpdlMtR2duWHZAMZADFieUN2bE9IcnpOZA2xnQmJ6ejh6d3ZAqemFqcXNkQWpaU3hISVY3TnQ0d21IUi1hbGZAWaHE4b0k0MFZA3RUo0UVdTM2ZAxcHVOWAZDZD"
+    DAYS = 500
+
+    GRAPH_URL_PREFIX = "https://graph.facebook.com/"
+    GROUPS_SUFFIX = "/groups"
+    MEMBERS_SUFFIX = "/members"
+
+    DEFAULT_LIMIT = "50000"
+    VERBOSE = True
+    SINCE = datetime.datetime.now() - datetime.timedelta(days=DAYS)
+
+    headers = {'Authorization': 'Bearer ' + TOKEN}
+    params = "?fields=feed.since(" + SINCE.strftime(
+        "%S") + ").limit(50000),name,privacy,members{name,id,email,administrator},updated_time&amp"
+
+    # params += "&amp;limit=" + DEFAULT_LIMIT
+
+    graph_url = GRAPH_URL_PREFIX + "community" + GROUPS_SUFFIX + params
+
+    result = requests.get(graph_url, headers=headers)
+    result_json = json.loads(result.text)
+    groups = []
+    members = []
+
+    def mem(grp):
+        print("***group_members***")
+
+        paramss = "?fields=feed.since(" + SINCE.strftime(
+            "1000") + ").limit(50000),name,email,id,administrator,updated_time&amp"
+        # paramss += "&amp;limit=" + DEFAULT_LIMIT
+
+        # print("1")
+        grp_url = GRAPH_URL_PREFIX + grp + MEMBERS_SUFFIX + paramss
+        # print("2")
+        res = requests.get(grp_url, headers=headers)
+        # print("3")
+        res_json = json.loads(res.text)
+        # print("4")
+        if "data" in res_json:
+            # print("5")
+            for member_obj in res_json["data"]:
+                # print("6")
+                if "feed" in member_obj:
+                    # print("7")
+                    members.append(member_obj)
+                    # print("8")
+                    for i in range(len(members)):
+                        # print("9")
+                        print(members[i]['name'])
+                        # print("10")
+                        print(members[i]['email'])
+                        print(members[i]['administrator'])
+                        print(members[i]['id'])
+                        print("******")
+                        # print("11")
+                    members.clear()
+        else:
+            print("12")
+
+    print("groups")
+
+    if "data" in result_json:
+        for group_obj in result_json["data"]:
+            if "feed" in group_obj:
+                groups.append(group_obj)
+
+        for i in range(len(groups)):
+            print(groups[i]['name'])
+            print(groups[i]['id'])
+            grp = groups[i]['id']
+            mem(grp)
+            print(groups[i]['privacy'])
+            print(" ")
+
+    return render(
             request,
             'fetch/members.html',
             {
